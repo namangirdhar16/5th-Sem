@@ -1,0 +1,29 @@
+#include <iostream>
+// binary operator overloading
+using namespace std;
+class book{
+    public: 
+    string name;
+    int pages;
+    book() {
+        
+    }
+    book(string c, int p) {
+        name = c;
+        pages = p;
+    }
+    book operator + (book &b2) {
+        book b3;
+        b3.name = b2.name;
+        b3.pages = pages + b2.pages;
+        return b3;
+    }
+    
+};
+
+int main() {
+    book b1("deep work", 135);
+    book b3("attitudeIsEverything", 166);
+    book b2 = b1 + b3;
+    cout << b2.name << ' ' << b2.pages << endl;
+}

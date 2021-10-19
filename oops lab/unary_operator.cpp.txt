@@ -1,0 +1,22 @@
+#include <iostream>
+// unary operator overloading
+using namespace std;
+class book{
+    public: 
+    string name;
+    int pages;
+    book(string c, int p) { 
+        name = c;
+        pages = p;
+    }
+    void operator ++ () {
+        pages++;
+    }
+};
+
+int main() {
+    book b1("deep work", 135);
+    cout << b1.pages << endl;
+    ++b1;
+    cout << b1.pages << endl;
+}

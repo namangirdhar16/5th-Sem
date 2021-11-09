@@ -1,0 +1,85 @@
+#include <iostream>
+
+using namespace std;
+// single inheritance
+
+
+class Animal{
+    
+    public:
+	Animal()
+	{
+	cout << "This is an animal class" << endl;
+	}
+};
+class Reptile {
+  public: 
+  Reptile() {
+      cout << "This is a reptile class" << endl;
+  }
+};
+class seaAnimal: public Animal {
+    public: 
+    seaAnimal() {
+        cout << "constructor of landAnimal class called!" << endl;
+    }
+};
+// --------------------------------Hierarchical Inheritance----------------------------------//
+class cat: public Animal{
+    public:
+    cat() {
+        cout << "constructor of cat class called" << endl;
+    }
+};
+class eagle: public Animal {
+    public: 
+    eagle() {
+         cout << "constructor of eagle class called" << endl;
+    }
+};
+//-------------------------------------------------------------------------------------------//
+class snake: public Animal, public Reptile {
+  public: 
+  snake() {
+       cout << "constructor of snake class called!" << endl;
+  }
+};
+
+class tiger: public cat{
+    public: 
+    tiger() {
+         cout << "constructor of tiger class called!" << endl;
+    }
+};
+//--------------------------------------Hybrid Inheritance------------------------------------//
+class crocodile: public seaAnimal, public Reptile {
+   public: 
+   crocodile() {
+       cout << "constructor of crocodile class called!" << endl;
+   }
+};
+//--------------------------------------------------------------------------------------------//
+int main() {
+    // single inheritance 
+	cat c1;
+    cout << "**** Single Inheritance ****" << endl;
+    cout << endl;
+    // multiple inheritance
+    snake s1;
+    cout << "**** Multiple Inheritance ****" << endl;
+    cout << endl;
+    // multilevel inheritance
+    tiger t1;
+    cout << "**** Multilevel Inheritance ****" << endl;
+    cout << endl;
+    //Hierarchical Inheritance
+    cat c2;
+    eagle e1;
+    cout << "**** Hierarchical Inheritance ****" << endl;
+    cout << endl;
+    // Hybrid Inheritance
+    crocodile cr1;
+    cout << "**** Hybrid Inheritance ****" << endl;
+    cout << endl;
+	return 0;
+}

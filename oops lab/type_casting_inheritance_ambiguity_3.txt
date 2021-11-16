@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+
+class first{
+public :
+    int v1 = 1;
+    virtual  void display(){
+       cout<< "showing v1 "<< v1 <<endl;
+    }
+};
+
+class second: public first{
+public:
+    int v2 = 2;
+    void display(){
+        
+    cout << "showing v1 "<< v1 <<endl;
+    cout << "showing v2 "<< v2 <<endl;
+
+    }
+
+};
+
+int main(){
+    
+   first *f1ptr;
+   first f1;
+   second s1 ;
+
+   second *s1ptr;
+   s1ptr = &s1;
+   s1ptr->display();
+
+
+return 0;}

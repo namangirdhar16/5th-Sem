@@ -1,0 +1,32 @@
+#include <iostream>
+
+using namespace std;
+
+class bottom{
+  public: 
+  void hello() {
+      cout << "hello from the bottom of my heart!!" << endl;
+  }
+};
+class midleft: virtual public bottom {
+    public: 
+    midleft() {
+        cout << "constructor of midleft called!" << endl;
+    }
+};
+class midRight: virtual public bottom {
+    public: 
+    midRight() {
+        cout << "constructor of midRight called!" << endl;
+    }
+};
+class up: public midleft, public midRight {
+  public: 
+  up() {
+    cout << "constructor of up called!" << endl;   
+  }
+};
+int main() {
+   up u1;
+   u1.hello();
+}

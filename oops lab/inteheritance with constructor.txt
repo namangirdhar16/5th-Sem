@@ -1,0 +1,22 @@
+#include <iostream>
+
+using namespace std;
+
+class cat{
+    public: 
+    string name;
+    cat() {
+        cout << "constructor of cat class called!!" << endl;
+    }
+};
+class tiger: public cat{
+   public:
+   string family;
+   tiger() {
+       cout << "tiger constructor called!" << endl;
+   }
+};
+int main() {
+    
+    tiger t1;
+}

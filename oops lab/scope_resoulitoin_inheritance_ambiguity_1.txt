@@ -1,0 +1,26 @@
+#include <iostream>
+
+using namespace std;
+
+class first{
+  public: 
+  void call() {
+      cout << "call of first called!" << endl;
+  }
+};
+class second{
+    public: 
+    void call() {
+        cout << "call of second called!" << endl;
+    }
+};
+class third: public first, public second{
+    public:
+    third() {
+         cout << "constructor of third called!" << endl;
+    }
+};
+int main() {
+    third t1;
+    t1.first::call();
+}

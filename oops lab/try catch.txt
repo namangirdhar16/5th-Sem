@@ -1,0 +1,151 @@
+#include <iostream>
+#include <stdexcept>
+
+using namespace std;
+
+// simple try catch without function 
+int main(){
+
+int p = 11, q = 0, r;
+
+    try{
+        if(q == 0)
+            throw runtime_error("divide by zero error: you can't divide a number by zero");
+     
+        r = p / q;
+        
+        cout << r << endl;
+    }
+    catch(runtime_error &e) {
+        
+      cout<<"exception occured"<<endl;
+      cout<<e.what();
+    
+    }
+   return 0;
+
+}
+
+
+
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+  int p = 10, q = 0, c;
+  char check = 'a';
+    
+    try
+    {
+    	if(!(check >= 'A' && check <= 'Z'))
+    	throw(check);
+    	
+    	if(q == 0)
+    		throw(c);
+    	else
+    	c = p / q;
+    
+    }
+    catch(char c)     
+    {
+    	cout << "Caught exception : char type " << endl;
+    }
+    catch(int i)     
+    {
+    	cout<< "Caught exception : int type " << endl;
+    }
+
+
+}
+
+#include <iostream>
+using namespace std;
+
+// ... catch without function 
+int main() {
+  try {
+    int age = 15;
+    if (age >= 18) {
+      cout << "Access granted - you are old enough.";
+    } else {
+      throw 505;
+    }
+  }
+  catch (...) {
+    cout << "Access denied - You must be at least 18 years old.\n";
+  }
+  return 0;
+}
+
+
+#include<iostream>
+#include<stdexcept>
+using namespace std;
+
+void test(){
+  throw 20;
+}
+
+int main(){
+      try{
+         test();
+      }
+      catch(int e){
+    
+         cout<< "integer type " << e <<endl;
+      }
+
+  return 0;
+}
+
+
+#include<iostream>
+#include<stdexcept>
+using namespace std;
+
+void check() throw (int , char, runtime_error){
+
+  throw 'e';
+}
+int main(){
+    
+  try{
+
+    check();
+  }
+  catch(int e) {
+    cout<< "integer type " << e <<endl;
+  }
+  catch(char c) {
+   cout<< "character type " << c <<endl;
+  }
+  catch(runtime_error r) {
+   cout << "runtime error type " << r.what() <<endl;
+  }
+
+
+
+  return 0;
+  }
+
+
+#include<iostream>
+#include<stdexcept>
+using namespace std;
+
+void test() throw (int, char, runtime_error){
+  throw 20;
+}
+
+int main(){
+  try{
+     test();
+  }
+  catch(...){
+     cout << "some error occured" << endl;
+  }
+
+  return 0;
+};

@@ -1,0 +1,73 @@
+#include <iostream>
+
+using namespace std;
+
+template <class T>
+class obj{
+    public:
+    string name;
+    T num;
+    obj(T n, string Name) {
+        num = n;
+        name = Name;
+    }
+    void print() {
+        cout << name << " " << num << endl;
+    }
+};
+
+int main() {
+    obj<int> obj1(23, "Naman");
+    obj<int> obj2(24, "Mihir");
+    obj1.print();
+    obj2.print();
+    
+}
+
+
+
+
+#include <iostream>
+
+using namespace std;
+ 
+template<class T> 
+int binarySearch(T arr[], T ele, int n) {
+    int lo = 0, hi = n - 1;
+    while(lo <= hi) {
+        int mid = lo + (hi - lo) / 2;
+        if(arr[mid] == ele) return mid;
+        else if(arr[mid] > ele) hi = mid - 1;
+        else lo = mid + 1;
+    }
+    return -1;
+}
+int main() {
+    float arr[] = {-5.3, 6.5, 7.7, 677.4545};
+    cout << binarySearch<float>(arr, 7.7, 4) << endl;
+}
+
+
+#include<iostream>
+using namespace std;
+
+class parent
+{
+public:
+	virtual void show() = 0;
+};
+
+class child: public parent
+{
+public:
+	void show() { 
+	    cout << "This is from child class" << endl;
+	}
+};
+
+int main(void)
+{
+	child c1;
+    c1.show();
+	return 0;
+}
